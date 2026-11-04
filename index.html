@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#171b2b">
+  <meta name="description" content="A little encouragement for every new day.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="sunset-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>SUNSET — A brighter tomorrow starts today</title>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="SUNSET home">
+        <span class="brand-mark">◒</span><span>SUNSET</span>
+      </a>
+      <button class="icon-button" id="settingsOpen" aria-label="Open settings">⚙</button>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow"><span class="sun-dot"></span> A NEW DAY, A NEW BEGINNING</div>
+      <p class="date" id="todayDate"></p>
+      <h1 id="greeting">Good morning.</h1>
+      <p class="hero-subtitle">Take a breath. You have another chance to grow.</p>
+    </section>
+
+    <nav class="tabs" aria-label="Choose your daily inspiration">
+      <button class="tab active" data-mode="both">Both</button>
+      <button class="tab" data-mode="general">Motivation</button>
+      <button class="tab" data-mode="christian">Scripture</button>
+    </nav>
+
+    <section id="cards" class="cards" aria-live="polite"></section>
+
+    <section class="reflection">
+      <span class="reflection-kicker">A MOMENT FOR YOU</span>
+      <p id="reflectionText">You don't have to solve everything today. Just take the next good step.</p>
+    </section>
+
+    <div class="actions">
+      <button class="primary-button" id="shareButton">↗ &nbsp; Share today's encouragement</button>
+      <button class="secondary-button" id="saveButton">♡ &nbsp; Save today's favourite</button>
+    </div>
+
+    <section class="favorites-section" id="favoritesSection" hidden>
+      <div class="section-heading"><div><span class="reflection-kicker">YOUR COLLECTION</span><h2>Saved favourites</h2></div></div>
+      <div id="favoritesList" class="favorites-list"></div>
+    </section>
+
+    <footer>Made for the mornings when you need a little light.</footer>
+  </main>
+
+  <div class="modal-backdrop" id="settingsModal" hidden>
+    <section class="settings-panel" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+      <div class="modal-heading"><div><span class="reflection-kicker">MAKE IT YOURS</span><h2 id="settingsTitle">Settings</h2></div><button class="icon-button" id="settingsClose" aria-label="Close settings">✕</button></div>
+      <label class="setting-row"><span><strong>Morning reminder</strong><small>Choose when SUNSET should remind you.</small></span><input type="checkbox" id="reminderToggle"></label>
+      <label class="field-label" for="reminderTime">Reminder time</label>
+      <input class="time-input" type="time" id="reminderTime" value="06:30">
+      <p class="note" id="reminderStatus">Reminders depend on browser support and permission. Keep SUNSET installed and check your device's notification settings.</p>
+      <button class="primary-button full" id="enableReminder">Enable notifications</button>
+      <button class="text-button" id="clearFavorites">Clear saved favourites</button>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

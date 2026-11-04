@@ -1,0 +1,18 @@
+{
+  "name": "SUNSET \u2014 Daily Encouragement",
+  "short_name": "SUNSET",
+  "description": "A little encouragement for every new day.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#111522",
+  "theme_color": "#171b2b",
+  "icons": [
+    {
+      "src": "sunset-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
